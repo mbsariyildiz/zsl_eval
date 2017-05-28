@@ -1,0 +1,8 @@
+# ignore all
+*
+
+# except following
+!.gitignore
+!*.py
+!*.m
+!README.md
