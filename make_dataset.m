@@ -2,11 +2,12 @@ function [] = make_dataset( dataset, fname)
 %CREATE_DATASET 
 %   Splits fields of specified "dataset" and stores each field into the 
 %   file "fname" which is compatible with hdf5 so that it can directly be
-%   loaded into numpy by h5py.
+%   loaded into numpy by h5py. You can use this function to modify .mat files provided by
+%   Yongqin Xian. 
 %   
 %   INPUTS:
 %       dataset,        string indicating name of dataset folder, 
-%                       e.g. one of ['CUB', 'AWA', 'SUN', 'APY']
+%                       e.g. one of ['CUB', 'AWA', 'SUN', 'APY']. 
 %       fname,          path indicating where to save resulting fields
 
 load(['../data/' dataset '/att_splits.mat']);
