@@ -11,6 +11,7 @@ https://www.mpi-inf.mpg.de/departments/computer-vision-and-multimodal-computing/
 
 import numpy as np
 import h5py
+from scipy.spatial.distance import cdist
 
 def score_ale(X, S_gt, model_path):
   """
@@ -23,9 +24,10 @@ def score_ale(X, S_gt, model_path):
     if X.shape[1] != W.shape[0]:
       W = W.T
 
-    if W.shape[1] != S_gt.shape[0]:
-      S_gt = S_gt.T
+  scores = X.dot(W).dot(S_gt.T)
+  return scores
 
-  return np.matmul(np.matmul(X, W), S_gt)
+
+  
 
   
